@@ -13,8 +13,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class CategoryDto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Short id;
     private String category;
     private String createdBy;
