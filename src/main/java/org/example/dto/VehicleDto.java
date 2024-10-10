@@ -12,7 +12,7 @@ import lombok.ToString;
 public class VehicleDto{
     private Long id;
     private Long ownerId;
-    private String categoryId;
+    private Short categoryId;
     private String make;
     private String year;
     private String model;

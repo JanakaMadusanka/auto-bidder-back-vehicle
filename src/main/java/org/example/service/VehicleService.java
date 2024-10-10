@@ -4,7 +4,7 @@ import org.example.dto.VehicleDto;
 import java.util.List;
 
 public interface VehicleService {
-    Long addVehicle(VehicleDto vehicleDto);
+    void addVehicle(VehicleDto vehicleDto);
     boolean updateVehicle(VehicleDto userDto);
     boolean deleteVehicle(Long id);
     List<VehicleDto> getAllVehicle();

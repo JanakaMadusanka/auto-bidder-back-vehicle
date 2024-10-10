@@ -22,9 +22,7 @@ public class CategoryServiceImpl implements CategoryService {
     public void addCategory(CategoryDto categoryDto) {
 
         // Check if a category with the same name already exists
-        Optional<CategoryEntity> existingCategory = Optional.ofNullable(repository.findByCategory(categoryDto.getCategory()));
-
-        if (existingCategory.isPresent()) {
+        if (repository.findByCategory(categoryDto.getCategory()) != null) {
             throw new IllegalArgumentException("Category with the name '" + categoryDto.getCategory() + "' already exists.");
         }
 

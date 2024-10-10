@@ -9,8 +9,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class CategoryDto {
-    private Short id;
-    private String category;
-    private String createdBy;
+public class VehicleImageDto {
+    private Long id;
+    private Long vehicleId;
+    private String imageUral;
+    private Boolean isMainImage;
 }
