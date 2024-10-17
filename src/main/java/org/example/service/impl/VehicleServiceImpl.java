@@ -16,15 +16,17 @@ public class VehicleServiceImpl implements VehicleService {
     final VehicleRepository repository;
     final ModelMapper mapper;
     @Override
-    public void addVehicle(VehicleDto vehicleDto) {
-        // Check if a vehicle with the same Registration No already exists
+    public Long addVehicle(VehicleDto vehicleDto) {
+
+        //Check if a vehicle with the same Registration No already exists
         if (repository.findByRegNo(vehicleDto.getRegNo()) != null) {
             throw new IllegalArgumentException("Vehicle with the Registration No. " + vehicleDto.getRegNo() + " already exists.");
         }
 
         // Map the DTO to the entity and Save the new vehicle
         VehicleEntity entity = mapper.map(vehicleDto, VehicleEntity.class);
-        repository.save(entity);
+        VehicleEntity savedEntity = repository.save(entity); //Save Vehicle & Get Entity with VehicleId
+        return (savedEntity.getId()); //Get VehicleId from saved vehicleEntity & return
     }
 
     @Override

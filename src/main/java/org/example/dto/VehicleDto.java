@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
+import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,4 +19,6 @@ public class VehicleDto{
     private String color;
     private String mileage;
     private String regNo;
+    private String mainImageUrl;
+    private List<String> additionalImageUrls;
 }

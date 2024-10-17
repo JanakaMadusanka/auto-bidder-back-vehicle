@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,6 +18,12 @@ public class VehicleImageEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Long vehicleId;
-    private String imageUral;
+    private String imageUrl;
     private Boolean isMainImage;
+
+    public VehicleImageEntity(Long vehicleId, String imageUrl, Boolean isMainImage) {
+        this.vehicleId = vehicleId;
+        this.imageUrl = imageUrl;
+        this.isMainImage = isMainImage;
+    }
 }
