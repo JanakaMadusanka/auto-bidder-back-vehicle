@@ -66,7 +66,18 @@ public class VehicleImageServiceImpl implements VehicleImageService {
     }
 
     @Override
-    public VehicleImageDto searchByVehicle(String vehicleId) {
-        return null;
+    public VehicleImageDto searchByVehicle(Long vehicleId) {
+        List<VehicleImageEntity> entityList = repository.findByVehicleId(vehicleId);
+        VehicleImageDto dto = new VehicleImageDto();
+        List<String> additionalUrl = new ArrayList<>();
+        for(VehicleImageEntity entity : entityList){
+            if (entity.getIsMainImage){
+                dto.setMainImageUrl(entity.getImageUrl());
+            }else {
+                additionalUrl.add(entity.getImageUrl());
+            }
+        }
+        dto.setAdditionalImageUrls(additionalUrl);
+        return dto;
     }
 }

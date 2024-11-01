@@ -81,8 +81,14 @@ public class VehicleServiceImpl implements VehicleService {
     }
 
     @Override
-    public VehicleDto searchByUser(String email) {
-        return null;
+    public List<VehicleDto> searchByOwner(Long ownerId) {
+        List<VehicleEntity> entityList = (List<VehicleEntity>) repository.findByOwnerId(ownerId);
+        List<VehicleDto> vehicleList = new ArrayList<>();
+
+        for(VehicleEntity entity : entityList){
+            vehicleList.add(mapper.map(entity,VehicleDto.class));
+        }
+        return vehicleList;
     }
     public boolean isExistVehicle(VehicleDto vehicleDto) {
         return repository.existsByRegNo(vehicleDto.getRegNo());

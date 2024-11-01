@@ -7,5 +7,5 @@ public interface VehicleImageService {
     boolean deleteImage(Long id);
     List<VehicleImageDto> getAllImages();
     VehicleImageDto searchImageById(Long id);
-    VehicleImageDto searchByVehicle(String vehicleId);
+    VehicleImageDto searchByVehicle(Long vehicleId);
 }

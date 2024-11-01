@@ -9,6 +9,6 @@ public interface VehicleService {
     List<VehicleDto> getAllVehicle();
     VehicleDto searchVehicleById(Long id);
     VehicleDto searchVehicleByRegNo(String regNo);
-    VehicleDto searchByUser(String email);
+    List<VehicleDto> searchByOwner(Long ownerId);
     boolean isExistVehicle(VehicleDto vehicleDto);
 }
