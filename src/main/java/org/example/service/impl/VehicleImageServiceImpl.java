@@ -71,7 +71,7 @@ public class VehicleImageServiceImpl implements VehicleImageService {
         VehicleImageDto dto = new VehicleImageDto();
         List<String> additionalUrl = new ArrayList<>();
         for(VehicleImageEntity entity : entityList){
-            if (entity.getIsMainImage){
+            if (entity.getIsMainImage()){
                 dto.setMainImageUrl(entity.getImageUrl());
             }else {
                 additionalUrl.add(entity.getImageUrl());
