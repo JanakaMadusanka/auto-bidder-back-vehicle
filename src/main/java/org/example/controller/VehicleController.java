@@ -28,6 +28,16 @@ public class VehicleController {
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
         }
     }
+
+    @PutMapping("/update/{id}")
+    public String updateVehicle(@PathVariable Long id, @RequestBody VehicleDto vehicleDto){
+        vehicleDto.setId(id);
+        if(service.updateVehicle(vehicleDto)){
+            return "Updated";
+        }
+        return "User doesn't exist";
+    }
+
     @GetMapping("/search-by-owner/{ownerId}")
     public List<VehicleDto> searchUserByOwner(@PathVariable Long ownerId){
 

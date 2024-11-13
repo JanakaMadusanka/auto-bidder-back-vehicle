@@ -21,4 +21,7 @@ public class VehicleDto{
     private String regNo;
     private String mainImageUrl;
     private List<String> additionalImageUrls;
+    private Boolean isUnderAuction;
+    private Double minBidAmount;
+    private Integer auctionTimeOut;
 }

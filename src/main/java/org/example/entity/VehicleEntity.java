@@ -25,4 +25,7 @@ public class VehicleEntity {
     private String color;
     private String mileage;
     private String regNo;
+    private Boolean isUnderAuction;
+    private Double minBidAmount;
+    private Integer auctionTimeOut;
 }
