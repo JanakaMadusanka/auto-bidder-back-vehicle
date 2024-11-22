@@ -10,7 +10,14 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class VehicleImageDto {
+    private Long id;
     private Long vehicleId;
     private String mainImageUrl;
     private List<String> additionalImageUrls;
+
+    public VehicleImageDto(Long vehicleId, String mainImageUrl, List<String> additionalImageUrls) {
+        this.vehicleId = vehicleId;
+        this.mainImageUrl = mainImageUrl;
+        this.additionalImageUrls = additionalImageUrls;
+    }
 }

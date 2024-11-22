@@ -40,6 +40,26 @@ public class VehicleImageServiceImpl implements VehicleImageService {
     }
 
     @Override
+    public boolean updateImage(VehicleImageDto vehicleImageDto) {
+        Long imageId = vehicleImageDto.getId();
+        if (imageId != null){
+            VehicleImageEntity existingImage = repository.findById(imageId).orElse(null);
+            if(existingImage !=null){
+
+                // Map the DTO to the entity and Save the new Image
+                VehicleImageEntity entity = mapper.map(vehicleImageDto, VehicleImageEntity.class);
+                repository.save(entity);
+                return true;
+
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+
+    @Override
     public boolean deleteImage(Long id) {
         if(repository.existsById(id)){
             repository.deleteById(id);
