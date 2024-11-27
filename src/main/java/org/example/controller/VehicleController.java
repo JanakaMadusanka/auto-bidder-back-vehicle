@@ -35,7 +35,21 @@ public class VehicleController {
         if(service.updateVehicle(vehicleDto)){
             return "Updated";
         }
-        return "User doesn't exist";
+        return "Vehicle doesn't exist";
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteVehicle(@PathVariable Long id){
+        if(service.deleteVehicle(id)){ // Delete Vehicle without images
+            List<VehicleImageDto> imageList = imageService.searchByVehicle(id);
+            if (imageList != null && !imageList.isEmpty()) {
+                for (VehicleImageDto imageDto: imageList) {
+                    imageService.deleteImage(imageDto.getId());
+                }
+            }
+            return "Deleted";
+        }
+        return "Vehicle doesn't exist";
     }
 
     @GetMapping("/search-by-owner/{ownerId}")
@@ -49,7 +63,7 @@ public class VehicleController {
 
         for (VehicleDto vehicleDto: vehicleList){
             Long vehicleId = vehicleDto.getId();
-            VehicleImageDto vehicleImageDto = imageService.searchByVehicle(vehicleId); //get vehicle image dto
+            VehicleImageDto vehicleImageDto = imageService.searchImageSetByVehicle(vehicleId); //get vehicle image dto
             vehicleDto.setMainImageUrl(vehicleImageDto.getMainImageUrl());
             vehicleDto.setAdditionalImageUrls(vehicleImageDto.getAdditionalImageUrls());
             vehicle.add(vehicleDto); // add vehicleDto with images to vehicle array list

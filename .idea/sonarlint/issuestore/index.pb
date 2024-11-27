@@ -14,3 +14,11 @@ U
 %src/main/java/org/example/Config.java,2\0\20eaabf044c880158fec562e603561a3547cdb5d
 l
 <src/main/java/org/example/repository/CategoryRepository.java,3\0\3090be9290d88f720fd4c971b9554e2076d95b53
+d
+4src/main/java/org/example/entity/CategoryEntity.java,d\e\de0e87cfeb5d39c4b40e8f1684a323ad377fdbcd
+k
+;src/main/java/org/example/repository/VehicleRepository.java,7\6\7683053e3aaa7f270e7786f74eb8247165c5e9a9
+l
+<src/main/java/org/example/controller/CategoryController.java,7\5\75f038c102100c804f5eb5db6bd3433fe6892d11
+p
+@src/main/java/org/example/repository/VehicleImageRepository.java,5\3\537fbd7dbe553377a72984e0ca3a489d8a1557ee

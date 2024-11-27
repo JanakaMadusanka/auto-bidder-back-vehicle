@@ -1,6 +1,7 @@
 package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.example.dto.VehicleDto;
 import org.example.dto.VehicleImageDto;
 import org.example.entity.VehicleImageEntity;
 import org.example.repository.VehicleImageRepository;
@@ -86,7 +87,17 @@ public class VehicleImageServiceImpl implements VehicleImageService {
     }
 
     @Override
-    public VehicleImageDto searchByVehicle(Long vehicleId) {
+    public List<VehicleImageDto> searchByVehicle(Long vehicleId) {
+        List<VehicleImageEntity> entityList = repository.findByVehicleId(vehicleId);
+        List<VehicleImageDto> dtoList = new ArrayList<>();
+        for(VehicleImageEntity entity : entityList){
+            VehicleImageDto dto = mapper.map(entity, VehicleImageDto.class);
+            dtoList.add(dto);
+        }
+        return dtoList;
+    }
+
+    public VehicleImageDto searchImageSetByVehicle(Long vehicleId) {
         List<VehicleImageEntity> entityList = repository.findByVehicleId(vehicleId);
         VehicleImageDto dto = new VehicleImageDto();
         List<String> additionalUrl = new ArrayList<>();
