@@ -1,7 +1,7 @@
 package org.example.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.example.dto.VehicleDto;
+import org.example.dto.ImageDto;
 import org.example.dto.VehicleImageDto;
 import org.example.entity.VehicleImageEntity;
 import org.example.repository.VehicleImageRepository;
@@ -41,23 +41,19 @@ public class VehicleImageServiceImpl implements VehicleImageService {
     }
 
     @Override
-    public boolean updateImage(VehicleImageDto vehicleImageDto) {
-        Long imageId = vehicleImageDto.getId();
+    public boolean updateImage(ImageDto imageDto) {
+        Long imageId = imageDto.getId();
         if (imageId != null){
             VehicleImageEntity existingImage = repository.findById(imageId).orElse(null);
             if(existingImage !=null){
 
                 // Map the DTO to the entity and Save the new Image
-                VehicleImageEntity entity = mapper.map(vehicleImageDto, VehicleImageEntity.class);
+                VehicleImageEntity entity = mapper.map(imageDto, VehicleImageEntity.class);
                 repository.save(entity);
                 return true;
-
-            }else{
-                return false;
             }
-        }else{
-            return false;
         }
+        return false;
     }
 
     @Override

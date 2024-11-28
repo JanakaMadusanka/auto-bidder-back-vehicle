@@ -1,13 +1,10 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.dto.VehicleDto;
-import org.example.dto.VehicleImageDto;
+import org.example.dto.ImageDto;
 import org.example.service.VehicleImageService;
 import org.example.service.VehicleService;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -17,9 +14,9 @@ public class VehicleImageController {
     final VehicleService service;
     final VehicleImageService imageService;
     @PutMapping("/update/{id}")
-    public String updateImage(@PathVariable Long id, @RequestBody VehicleImageDto vehicleImageDto){
-        vehicleImageDto.setId(id);
-        if(imageService.updateImage(vehicleImageDto)){
+    public String updateImage(@PathVariable Long id, @RequestBody ImageDto imageDto){
+        imageDto.setId(id);
+        if(imageService.updateImage(imageDto)){
             return "Updated";
         }
         return "User doesn't exist";

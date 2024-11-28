@@ -14,7 +14,6 @@ import lombok.ToString;
 @ToString
 @Entity
 public class VehicleImageEntity {
-    public boolean getIsMainImage;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
