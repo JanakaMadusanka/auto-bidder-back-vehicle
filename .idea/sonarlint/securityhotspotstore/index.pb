@@ -18,5 +18,3 @@ k
 ;src/main/java/org/example/repository/VehicleRepository.java,7\6\7683053e3aaa7f270e7786f74eb8247165c5e9a9
 l
 <src/main/java/org/example/controller/CategoryController.java,7\5\75f038c102100c804f5eb5db6bd3433fe6892d11
-p
-@src/main/java/org/example/repository/VehicleImageRepository.java,5\3\537fbd7dbe553377a72984e0ca3a489d8a1557ee

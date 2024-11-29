@@ -83,6 +83,11 @@ public class VehicleImageServiceImpl implements VehicleImageService {
     }
 
     @Override
+    public VehicleImageDto searchImageByUrl(String imageUrl) {
+        return mapper.map(repository.findByImageUrl(imageUrl), VehicleImageDto.class);
+    }
+
+    @Override
     public List<VehicleImageDto> searchByVehicle(Long vehicleId) {
         List<VehicleImageEntity> entityList = repository.findByVehicleId(vehicleId);
         List<VehicleImageDto> dtoList = new ArrayList<>();
