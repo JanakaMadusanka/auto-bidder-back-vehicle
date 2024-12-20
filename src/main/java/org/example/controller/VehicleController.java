@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.dto.ImageDto;
 import org.example.dto.VehicleDto;
 import org.example.dto.VehicleImageDto;
 import org.example.service.VehicleImageService;
@@ -41,9 +42,9 @@ public class VehicleController {
     @DeleteMapping("/delete/{id}")
     public String deleteVehicle(@PathVariable Long id){
         if(service.deleteVehicle(id)){ // Delete Vehicle without images
-            List<VehicleImageDto> imageList = imageService.searchByVehicle(id);
+            List<ImageDto> imageList = imageService.searchByVehicle(id);
             if (imageList != null && !imageList.isEmpty()) {
-                for (VehicleImageDto imageDto: imageList) {
+                for (ImageDto imageDto: imageList) {
                     imageService.deleteImage(imageDto.getId());
                 }
             }

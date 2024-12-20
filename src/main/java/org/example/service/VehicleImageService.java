@@ -10,6 +10,6 @@ public interface VehicleImageService {
     List<VehicleImageDto> getAllImages();
     VehicleImageDto searchImageById(Long id);
     VehicleImageDto searchImageByUrl(String imageUrl);
-    List<VehicleImageDto> searchByVehicle(Long vehicleId);
+    List<ImageDto> searchByVehicle(Long vehicleId);
     VehicleImageDto searchImageSetByVehicle(Long vehicleId);
 }

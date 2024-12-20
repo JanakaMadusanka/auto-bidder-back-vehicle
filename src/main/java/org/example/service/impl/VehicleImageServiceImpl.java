@@ -88,11 +88,11 @@ public class VehicleImageServiceImpl implements VehicleImageService {
     }
 
     @Override
-    public List<VehicleImageDto> searchByVehicle(Long vehicleId) {
+    public List<ImageDto> searchByVehicle(Long vehicleId) {
         List<ImageEntity> entityList = repository.findByVehicleId(vehicleId);
-        List<VehicleImageDto> dtoList = new ArrayList<>();
+        List<ImageDto> dtoList = new ArrayList<>();
         for(ImageEntity entity : entityList){
-            VehicleImageDto dto = mapper.map(entity, VehicleImageDto.class);
+            ImageDto dto = mapper.map(entity, ImageDto.class);
             dtoList.add(dto);
         }
         return dtoList;
