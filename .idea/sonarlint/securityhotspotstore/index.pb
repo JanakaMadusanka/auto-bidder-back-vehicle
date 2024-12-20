@@ -18,3 +18,11 @@ k
 ;src/main/java/org/example/repository/VehicleRepository.java,7\6\7683053e3aaa7f270e7786f74eb8247165c5e9a9
 l
 <src/main/java/org/example/controller/CategoryController.java,7\5\75f038c102100c804f5eb5db6bd3433fe6892d11
+^
+.src/main/java/org/example/dto/CategoryDto.java,a\8\a84e30371222acef59a51aa43d982fa500f2711b
+e
+5src/main/java/org/example/service/VehicleService.java,1\b\1b895a7cdf93558b4bc47e7bc4cd53ea1a49907a
+c
+3src/main/java/org/example/entity/VehicleEntity.java,e\3\e395c51e1a6c6cc8b68a55c1ba9303bbc8d8bed8
+d
+4src/main/java/org/example/entity/CategoryEntity.java,d\e\de0e87cfeb5d39c4b40e8f1684a323ad377fdbcd

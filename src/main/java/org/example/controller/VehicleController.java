@@ -24,7 +24,7 @@ public class VehicleController {
             Long vehicleId = service.addVehicle(vehicleDto);
             imageService.addImage(new VehicleImageDto(vehicleId,vehicleDto.getMainImageUrl(),vehicleDto.getAdditionalImageUrls()));
             return new ResponseEntity<>("Vehicle registered successfully", HttpStatus.CREATED);
-        } catch (IllegalArgumentException ex) {
+        } catch (Exception ex) {
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
         }
     }
